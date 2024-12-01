@@ -9,12 +9,12 @@ pipeline {
         }
         stage('Install Dependencies') {
             steps {
-                sh 'pip install -r requirements.txt'
+                sh 'pip install -r C:\BIG_DATA\KAMJRITZTE_Indra\data_pipeline\requirements.txt'
             }
         }
         stage('Run Tests') {
             steps {
-                sh 'pytest tests/'
+                sh 'pytest C:\BIG_DATA\KAMJRITZTE_Indra\data_pipeline\tests'
             }
         }
         stage('Deploy PySpark Job') {

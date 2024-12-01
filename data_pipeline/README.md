@@ -1,6 +1,15 @@
 
 Data Pipeline using PySpark and Hive:
 
+data-pipeline/
+├── Jenkinsfile           # Jenkins pipeline configuration file
+├── src/
+├── tests/
+├── airflow/
+└── README.md
+|__ Requirements.txt
+
+
 Overview:
 
 This project implements a data processing pipeline using PySpark, Hive, and HDFS. The pipeline:

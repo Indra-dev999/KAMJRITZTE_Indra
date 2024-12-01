@@ -22,11 +22,11 @@ try:
     df = spark.read.format("csv") \
         .option("header", "true") \
         .option("inferSchema", "true") \
-        .option("delimiter", ",") \
+        .option("delimiter", ";") \
         .load(raw_data_path)
 
     # Step 2: Transform the data (example: concatenating name fields)
-    df_transformed = df.withColumn("fullname", concat(col("first_name"), lit(" "), col("last_name")))
+    df_transformed = df.withColumn("fullname", concat(col("first_name"), lit("-"), col("last_name")))
 
     # Step 3: Write the transformed data to a Hive table
     spark.sql("CREATE DATABASE IF NOT EXISTS my_database")

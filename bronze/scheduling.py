@@ -22,7 +22,7 @@ with DAG(
     # Task 1: Run PySpark job
     run_pyspark = BashOperator(
         task_id='run_pyspark_job',
-        bash_command='spark-submit --master yarn /path/to/your_pyspark_script.py'
+        bash_command='spark-submit --master yarn /path/to/ingest.py'
     )
 
     run_pyspark

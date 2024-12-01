@@ -12,7 +12,9 @@ data-pipeline/
 
 Overview:
 
-This project implements a data processing pipeline using PySpark, Hive, and HDFS. The pipeline:
+This project implements a data processing pipeline using PySpark, Hive, and HDFS. 
+
+The pipeline:
 
 1.Reads raw data from HDFS.
 2.Transforms the data (e.g., concatenates columns).

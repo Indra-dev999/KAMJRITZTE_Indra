@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                git 'https://github.com/Indra-dev999/KAMJRITZTE_Indra.git'
+            }
+        }
+        stage('Install Dependencies') {
+            steps {
+                sh 'pip install -r requirements.txt'
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                sh 'pytest tests/'
+            }
+        }
+        stage('Deploy PySpark Job') {
+            steps {
+                sh 'spark-submit --master yarn C:\BIG_DATA\KAMJRITZTE_Indra\data_pipeline\src\ingest.py'
+            }
+        }
+    }
+}
